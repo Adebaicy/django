@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block fuckingname %}
+i m in my blog
+I have {{blogs.count}} blog{{blogs.count|pluralize}} currently
+{% for p in blogs %}
+<br>
+<a href = '{% url 'blog:det' p.id %}' > {{p.title}}</a>
+<br>
+{{p.des|striptags|truncatechars:2}}
+
+
+{%endfor%}
+
+{%endblock%}

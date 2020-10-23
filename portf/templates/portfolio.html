@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block fuckingname %}
+
+<h1>Adebaicy:s home</h1>
+
+<br>
+<a href='blog/'> blog </a><br>
+
+I DY GET PROBLEM FOR HERE
+{% load static %}
+
+<a href='{% static 'portf/django.pdf' %}'>django documentation</a>
+<br>
+<img src="{% static 'portf/Capture.PNG' %}" alt="My image">
+
+<br>
+{% for p in projects %}
+<br>
+{{p.title}}<br>
+
+{{p.bio}}<br>
+<img src = '{{p.img.url}}'><br>
+
+{% endfor %}
+
+{% endblock %}
+
